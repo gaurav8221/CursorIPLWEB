@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global app styling. Kept intentionally lightweight and component-friendly. */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111111;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  height: 64px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-button {
+  border: 1px solid #e10600;
+  background: transparent;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.menu-button:hover {
+  background: #e10600;
+  border-color: #e10600;
+}
+
+.menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #0f0f0f;
+  border: 1px solid rgba(225, 6, 0, 0.9);
+  border-radius: 10px;
+  padding: 8px;
+  min-width: 160px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  z-index: 20;
+}
+
+.menu-link {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.menu-link:hover {
+  background: rgba(225, 6, 0, 0.18);
+}
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.welcome-text {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.content-title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
