@@ -5,7 +5,61 @@
   </header>
 
   <main class="content">
-    <div class="content-title">Login</div>
+    <div class="auth-card">
+      <div class="auth-heading">Login</div>
+
+      <form class="auth-form" (ngSubmit)="onSubmit($event)" novalidate>
+        <div class="auth-field">
+          <label class="auth-label" for="username">
+            Username
+            <span class="required-star" *ngIf="showUsernameError">*</span>
+          </label>
+          <input
+            id="username"
+            name="username"
+            class="auth-input"
+            type="email"
+            autocomplete="username"
+            [(ngModel)]="username"
+          />
+        </div>
+
+        <div class="auth-field">
+          <label class="auth-label" for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            class="auth-input"
+            type="password"
+            autocomplete="current-password"
+            [(ngModel)]="password"
+          />
+        </div>
+
+        <div class="auth-actions">
+          <button type="submit" class="auth-button auth-button-primary">
+            Submit
+          </button>
+          <button
+            type="button"
+            class="auth-button auth-button-secondary"
+            (click)="onReset()"
+          >
+            Reset
+          </button>
+        </div>
+
+        <div class="auth-footer">
+          <div class="auth-error" *ngIf="showUsernameError">
+            Invalid username. Username can only be an email!
+          </div>
+          <div class="auth-error" *ngIf="showPasswordError">
+            Invalid password. Password must be at least 8 characters, include 1 uppercase letter and 1 special character.
+          </div>
+          <a routerLink="/forgot-password" class="auth-link">Forgot password?</a>
+        </div>
+      </form>
+    </div>
   </main>
 </div>
 
